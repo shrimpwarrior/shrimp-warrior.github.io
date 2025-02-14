@@ -29,7 +29,7 @@ body {
 
 #mainHeader {
     position: absolute;
-    top: 30%; /* Adjusted for mobile */
+    top: 25%; /* Adjusted for mobile */
     left: 50%;
     transform: translate(-50%, -50%);
     color: #ff4d6d;
@@ -41,7 +41,7 @@ body {
 
 #fadeInText {
     position: absolute;
-    top: 35%; /* Adjusted for mobile */
+    top: 30%; /* Adjusted for mobile */
     left: 50%;
     transform: translate(-50%, -50%);
     color: #ff4d6d;
