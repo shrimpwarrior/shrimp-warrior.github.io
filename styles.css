@@ -1,0 +1,208 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: 'Arial', sans-serif;
+}
+
+.container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ffebee;
+    overflow: hidden;
+}
+
+.heart {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: #ff4d6d;
+    box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.2);
+    transform: rotate(45deg);
+}
+
+#mainHeader {
+    position: absolute;
+    top: 30%; /* Adjusted for mobile */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ff4d6d;
+    font-size: 2.5rem; /* Smaller font size for mobile */
+    text-align: center;
+    z-index: 10;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+#fadeInText {
+    position: absolute;
+    top: 35%; /* Adjusted for mobile */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ff4d6d;
+    font-size: 1.2rem; /* Smaller font size for mobile */
+    text-align: center;
+    opacity: 0; /* Initially hidden */
+    animation: fadeIn 2s ease-in-out 2s forwards; /* Fade-in after 2 seconds */
+    z-index: 15;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+#clickMeButton {
+    position: absolute;
+    top: 70%; /* Adjusted for mobile */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 20px; /* Smaller padding for mobile */
+    background-color: #ff4d6d;
+    color: white;
+    font-size: 1.2rem; /* Smaller font size for mobile */
+    text-decoration: none;
+    border-radius: 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+    z-index: 20;
+}
+
+#clickMeButton:hover {
+    background-color: #ff6b8b;
+}
+#overlayGif {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    width: 200px;
+    height: auto;
+}
+#gifContainer {
+    position: absolute;
+    top: 50%; /* Adjusted for mobile */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 20;
+    width: 150px; /* Smaller size for mobile */
+    height: auto;
+    display: inline-block;
+}
+
+#gifText {
+    position: absolute;
+    top: 0;
+    left: 140%; /* Position text to the right of the GIF */
+    transform: translateY(-50%);
+    color: #000000;
+    font-size: 1.2rem; /* Smaller font size for mobile */
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease-in-out;
+    z-index: 10;
+}
+
+#gifContainer:hover #gifText {
+    opacity: 1; /* Fade-in text when hovering over the GIF */
+}
+
+.heart::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #ff4d6d;
+    border-radius: 50%;
+    box-shadow: 0 -20px 20px rgba(0, 0, 0, 0.1);
+    transform: rotate(-45deg);
+}
+
+.heart::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -50%;
+    width: 100%;
+    height: 100%;
+    background: #ff4d6d;
+    border-radius: 50%;
+    box-shadow: -20px 0 20px rgba(0, 0, 0, 0.1);
+    transform: rotate(-45deg);
+}
+
+/* Media Queries for Mobile */
+@media (max-width: 768px) {
+    #mainHeader {
+        font-size: 2rem; /* Smaller font size for smaller screens */
+        top: 25%; /* Adjusted position */
+    }
+
+    #fadeInText {
+        font-size: 1rem; /* Smaller font size for smaller screens */
+        top: 35%; /* Adjusted position */
+    }
+
+    #clickMeButton {
+        font-size: 1rem; /* Smaller font size for smaller screens */
+        padding: 8px 16px; /* Smaller padding for smaller screens */
+        top: 75%; /* Adjusted position */
+    }
+
+    #gifContainer {
+        width: 120px; /* Smaller size for smaller screens */
+    }
+
+    #gifText {
+        font-size: 1rem; /* Smaller font size for smaller screens */
+    }
+}
+
+/* Add this to your existing CSS */
+#bouquetContainer {
+    position: absolute;
+    top: 50%;
+    right: 10%; /* Position on the right side */
+    transform: translateY(-50%);
+    z-index: 30; /* Ensure it's above other elements */
+    text-align: center;
+}
+
+#bouquetImage {
+    width: 150px; /* Adjust size as needed */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+#bouquetText {
+    color: #ff4d6d;
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+/* Media Queries for Mobile */
+@media (max-width: 768px) {
+    #bouquetContainer {
+        right: 5%; /* Adjust position for smaller screens */
+    }
+
+    #bouquetImage {
+        width: 120px; /* Smaller size for mobile */
+    }
+
+    #bouquetText {
+        font-size: 0.9rem; /* Smaller font size for mobile */
+    }
+}

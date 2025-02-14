@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>shrimpwarrior's art</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container"></div>
+    <h1 id="mainHeader">Happy Valentine's Day!!</h1>
+    <p id="fadeInText">Hover Over Bear!</p> <!-- Fade-in text -->
+    <div id="gifContainer">
+        <img src="as.gif" alt="Overlay GIF" id="overlayGif">
+        <p id="gifText">keep praying and believing!!! have sabr :))</p> <!-- Text that fades in when hovering -->
+    </div>
+    <a href="https://aidn.jp/wowa/555403733" id="clickMeButton" target="_blank">Click Me!</a> <!-- Open in new tab -->
+
+    <!-- Placeholder for the bouquet image and text -->
+    <div id="bouquetContainer"></div>
+
+    <script src="anime.min.js"></script>
+    <script>
+        const container = document.querySelector('.container');
+
+        // Function to create a heart and animate it
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+
+            // Set random initial position
+            heart.style.left = `${anime.random(0, window.innerWidth)}px`;
+            heart.style.top = `${anime.random(0, window.innerHeight)}px`;
+
+            container.appendChild(heart);
+
+            // Function to animate the heart
+            function animateHeart() {
+                anime({
+                    targets: heart,
+                    translateX: function() {
+                        return anime.random(-window.innerWidth, window.innerWidth); // Random X movement
+                    },
+                    translateY: function() {
+                        return anime.random(-window.innerHeight, window.innerHeight); // Random Y movement
+                    },
+                    duration: anime.random(8000, 15000), // Random duration for slower movement
+                    easing: 'linear',
+                    complete: animateHeart // Restart the animation when it finishes
+                });
+            }
+
+            animateHeart(); // Start the animation
+        }
+
+        // Create multiple hearts
+        for (let i = 0; i < 20; i++) {
+            createHeart();
+        }
+
+        // Add bouquet image and text when "Click Me!" is clicked
+        const clickMeButton = document.getElementById('clickMeButton');
+        const bouquetContainer = document.getElementById('bouquetContainer');
+
+        clickMeButton.addEventListener('click', () => {
+            // Create the image element
+            const bouquetImage = document.createElement('img');
+            bouquetImage.src = 'bouquetvalentine.png';
+            bouquetImage.alt = 'Bouquet Valentine';
+            bouquetImage.id = 'bouquetImage';
+
+            // Create the text element
+            const bouquetText = document.createElement('p');
+            bouquetText.textContent = "lol it's supposed to be a bouquet & us :3 i hope you are well :))";
+            bouquetText.id = 'bouquetText';
+
+            // Append the image and text to the container
+            bouquetContainer.appendChild(bouquetImage);
+            bouquetContainer.appendChild(bouquetText);
+        });
+    </script>
+</body>
+</html>
